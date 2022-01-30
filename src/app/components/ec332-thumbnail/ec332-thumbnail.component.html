@@ -1,0 +1,20 @@
+<div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>EC3-332</mat-card-title>
+      <mat-card-subtitle>Sterownik chłodni</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Adres urządzenia: {{address}}
+      </p>
+      <iframe id="hujsko" hidden>
+
+      </iframe>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="check()">Szczegóły</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
