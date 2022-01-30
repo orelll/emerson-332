@@ -56,19 +56,6 @@
                   "maximumError": "10kb"
                 }
               ]
-            },
-            "development": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
-              "optimization": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "vendorChunk": true,
-              "buildOptimizer": true
             }
           }
         },
@@ -80,9 +67,6 @@
           "configurations": {
             "production": {
               "browserTarget": "emerson:build:production"
-            },
-            "development": {
-              "browserTarget": "emerson:build:development"
             }
           }
         },
@@ -132,9 +116,6 @@
           "configurations": {
             "production": {
               "devServerTarget": "emerson:serve:production"
-            },
-            "development": {
-              "devServerTarget": "emerson:serve:development"
             }
           }
         }

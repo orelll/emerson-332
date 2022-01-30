@@ -1,1 +1,295 @@
-<HTML><HEAD><TITLE>TITLE BAR</TITLE><link rel="stylesheet" type="text/css" href="Emerson.css" /></HEAD><META http-equiv="Content-Script-Type" content="text/javascript"><script> var page = 11; var lgge = parseInt('0'); var dictionnary = top.header.document.applets[lgge]; var isFieldDisabled = 1; function setLanguage(language) { if (top.header.lgge != language) { top.header.location.reload(true); } } </script><script src="language.js"></script><script src="tooltip.js"></script><BODY Bgcolor="#C0C0C0" Leftmargin=0 Rightmargin=0 Topmargin=0 Bottommargin=0 onload="setLanguage(lgge);"><FONT COLOR="#000000" FACE="arial"><FORM ACTION="/tcp_ip.cgi" METHOD=POST><TABLE Border=0 Cellpadding=0 Cellspacing=0><tr Height=26><td Colspan=5 Width=986 Class="fs"><Center><script>document.write(dictionnary.get("TCPIPConfiguration"));</script></Center></TD></tr><tr Height=391><td Colspan=5 width=986><center><TABLE VALIGN="top" ALIGN="center" BGCOLOR="#C0C0C0" border=0 ><TR><TD><FIELDSET><LEGEND><script>document.write(dictionnary.get("TCPIPParameters"));</script></LEGEND><TABLE border=0><TR><TD width="10"></TD><TD width="150"><script>document.write(dictionnary.get("HostName"));</script></TD><TD width="150"><INPUT TYPE="TEXT" NAME="ncitc01" VALUE="EC00120AFD4EC0"></TD><TD width="10"></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("MACAddress"));</script></TD><TD><INPUT TYPE="TEXT" ID="ncitc24" VALUE="00120AFD4EC0"><script>disableField("ncitc24",1);</script></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("DHCPEnabled"));</script></TD><TD><input type="checkbox" name="ncitc02" value="1" id="id1" CHECKED><input type="hidden" name="ncitc02" value="0"></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("RenewByFailure"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc06" SIZE="6" VALUE="60">&nbsp sec.</TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("IPAddress"));</script></TD><TD><INPUT TYPE="TEXT" ID="ncitc03" NAME="ncitc03" SIZE="16" VALUE="192.168.0.100"><script>disableField("ncitc03",isFieldDisabled);</script></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("SubnetMask"));</script></TD><TD><INPUT TYPE="TEXT" ID="ncitc04" NAME="ncitc04" SIZE="16" VALUE="255.255.255.0"><script>disableField("ncitc04",isFieldDisabled);</script></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("GatewayAddress"));</script></TD><TD><INPUT TYPE="TEXT" ID="ncitc05" NAME="ncitc05" SIZE="16" VALUE="192.168.0.1"><script>disableField("ncitc05",isFieldDisabled);</script></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("CommunicationPort"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc23" SIZE="6" VALUE="1030"></TD><TD></TD></TR></TABLE></FIELDSET></TD><td width=10 rowspan=3></td><TD rowspan=3><FIELDSET><LEGEND><script>document.write(dictionnary.get("LanguageSelection"));</script></LEGEND><TABLE height=50 border=0><tr><td width="10"></td><TD width="180"><script>document.write(dictionnary.get("Language"));</script></TD><TD width="150"><TABLE border=0 cellpadding=0 cellspacing=0><TD><SELECT ID="ncitc20" NAME="ncitc20" STYLE="height: 22px ; width: 120px" ><OPTION value="0" ><script>getName(0);</script></OPTION><OPTION value="1" ><script>getName(1);</script></OPTION></SELECT><script>setSelected("ncitc20",lgge,0,1);</script></TD></TABLE></TD><td width="10"></td></TR></TABLE></FIELDSET><table><tr height=10><td></td></tr></table><FIELDSET><LEGEND><script>document.write(dictionnary.get("MailParameters"));</script></LEGEND><TABLE height=227 border=0><TR><TD width="10"></TD><TD width="180"><script>document.write(dictionnary.get("ServerAddress"));</script></TD><TD width="150"><INPUT TYPE="TEXT" NAME="ncitc08" VALUE="0.0.0.0"></TD><TD width="10"></TD></tr><tr><td></td><TD><script>document.write(dictionnary.get("Subject"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc09" VALUE=""></TD><td></td></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("MailAddressForController"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc10" VALUE=""></td><td>@</td><td><INPUT TYPE="TEXT" NAME="ncitc11" VALUE=""></td><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("LowPriorityAlarm"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc12" VALUE=""></td><td>@</td><td><INPUT TYPE="TEXT" NAME="ncitc13" VALUE=""></td><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("MediumPriorityAlarm"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc14" VALUE=""></td><td>@</td><td><INPUT TYPE="TEXT" NAME="ncitc15" VALUE=""></td><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("HighPriorityAlarm"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc16" VALUE=""></td><td>@</td><td><INPUT TYPE="TEXT" NAME="ncitc17" VALUE=""></td><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("CriticalAlarm"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc18" VALUE=""></td><td>@</td><td><INPUT TYPE="TEXT" NAME="ncitc19" VALUE=""></td><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("LogMailInterval"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc25" SIZE="6" VALUE="0">&nbsp <script>document.write(dictionnary.get("Days"));</script></td><td colspan="2"><TABLE border=0 cellpadding=0 cellspacing=0><TD><SELECT ID="ncitc26" NAME="ncitc26" STYLE="height: 22px ; width: 120px" ><OPTION value="0" ><script>document.write(dictionnary.get("Low"));</script></OPTION><OPTION value="1" ><script>document.write(dictionnary.get("Medium"));</script></OPTION><OPTION value="2" ><script>document.write(dictionnary.get("High"));</script></OPTION><OPTION value="3" ><script>document.write(dictionnary.get("Critical"));</script></OPTION></SELECT><script>setSelected("ncitc26",0,0,3);</script></TD></TABLE></td><TD></TD></TR></TABLE></FIELDSET></TD></TR><tr height=5></tr><tr><td><FIELDSET><LEGEND><script>document.write(dictionnary.get("NTPParameters"));</script></LEGEND><TABLE border=0><TR><TD width="10"></TD><TD width="150"><script>document.write(dictionnary.get("ServerAddress"));</script></TD><TD width="150"><INPUT TYPE="TEXT" NAME="ncitc21" VALUE="195.13.23.5"></TD><TD width="10"></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("TimeShiftUTCLocal"));</script></TD><TD><INPUT TYPE="TEXT" NAME="ncitc22" SIZE="1" VALUE="1">&nbsp h.</TD><TD></TD></TR></TABLE></FIELDSET></td></tr></TABLE></center></td></tr><tr Height=29><td Width=300></td><td Width=150 Align=Right><input name="button" type=SUBMIT value="Apply" style="width=80px"></td><td Width=86></td><td Width=150 Align=Left><input name="button" type=RESET value="Cancel" style="width=80px"></td><td Width=300></td><script>setButtons();</script></tr></Table></Form></FONT></BODY></HTML>
+<HTML>
+
+<HEAD>
+  <TITLE>TITLE BAR</TITLE>
+  <link rel="stylesheet" type="text/css" href="Emerson.css" />
+</HEAD>
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<script> var page = 11; var lgge = parseInt('0'); var dictionnary = top.header.document.applets[lgge]; var isFieldDisabled = 1; function setLanguage(language) { if (top.header.lgge != language) { top.header.location.reload(true); } } </script>
+<script src="language.js"></script>
+<script src="tooltip.js"></script>
+
+<BODY Bgcolor="#C0C0C0" Leftmargin=0 Rightmargin=0 Topmargin=0 Bottommargin=0 onload="setLanguage(lgge);">
+  <FONT COLOR="#000000" FACE="arial">
+    <FORM ACTION="/tcp_ip.cgi" METHOD=POST>
+      <TABLE Border=0 Cellpadding=0 Cellspacing=0>
+        <tr Height=26>
+          <td Colspan=5 Width=986 Class="fs">
+            <Center>
+              <script>document.write(dictionnary.get("TCPIPConfiguration"));</script>
+            </Center>
+          </TD>
+        </tr>
+        <tr Height=391>
+          <td Colspan=5 width=986>
+            <center>
+              <TABLE VALIGN="top" ALIGN="center" BGCOLOR="#C0C0C0" border=0>
+                <TR>
+                  <TD>
+                    <FIELDSET>
+                      <LEGEND>
+                        <script>document.write(dictionnary.get("TCPIPParameters"));</script>
+                      </LEGEND>
+                      <TABLE border=0>
+                        <TR>
+                          <TD width="10"></TD>
+                          <TD width="150">
+                            <script>document.write(dictionnary.get("HostName"));</script>
+                          </TD>
+                          <TD width="150"><INPUT TYPE="TEXT" NAME="ncitc01" VALUE="EC00120AFD4EC0"></TD>
+                          <TD width="10"></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("MACAddress"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" ID="ncitc24" VALUE="00120AFD4EC0">
+                            <script>disableField("ncitc24", 1);</script>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("DHCPEnabled"));</script>
+                          </TD>
+                          <TD><input type="checkbox" name="ncitc02" value="1" id="id1" CHECKED><input type="hidden"
+                              name="ncitc02" value="0"></TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("RenewByFailure"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc06" SIZE="6" VALUE="60">&nbsp sec.</TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("IPAddress"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" ID="ncitc03" NAME="ncitc03" SIZE="16" VALUE="192.168.0.100">
+                            <script>disableField("ncitc03", isFieldDisabled);</script>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("SubnetMask"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" ID="ncitc04" NAME="ncitc04" SIZE="16" VALUE="255.255.255.0">
+                            <script>disableField("ncitc04", isFieldDisabled);</script>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("GatewayAddress"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" ID="ncitc05" NAME="ncitc05" SIZE="16" VALUE="192.168.0.1">
+                            <script>disableField("ncitc05", isFieldDisabled);</script>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("CommunicationPort"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc23" SIZE="6" VALUE="1030"></TD>
+                          <TD></TD>
+                        </TR>
+                      </TABLE>
+                    </FIELDSET>
+                  </TD>
+                  <td width=10 rowspan=3></td>
+                  <TD rowspan=3>
+                    <FIELDSET>
+                      <LEGEND>
+                        <script>document.write(dictionnary.get("LanguageSelection"));</script>
+                      </LEGEND>
+                      <TABLE height=50 border=0>
+                        <tr>
+                          <td width="10"></td>
+                          <TD width="180">
+                            <script>document.write(dictionnary.get("Language"));</script>
+                          </TD>
+                          <TD width="150">
+                            <TABLE border=0 cellpadding=0 cellspacing=0>
+                              <TD><SELECT ID="ncitc20" NAME="ncitc20" STYLE="height: 22px ; width: 120px">
+                                  <OPTION value="0">
+                                    <script>getName(0);</script>
+                                  </OPTION>
+                                  <OPTION value="1">
+                                    <script>getName(1);</script>
+                                  </OPTION>
+                                </SELECT>
+                                <script>setSelected("ncitc20", lgge, 0, 1);</script>
+                              </TD>
+                            </TABLE>
+                          </TD>
+                          <td width="10"></td>
+                        </TR>
+                      </TABLE>
+                    </FIELDSET>
+                    <table>
+                      <tr height=10>
+                        <td></td>
+                      </tr>
+                    </table>
+                    <FIELDSET>
+                      <LEGEND>
+                        <script>document.write(dictionnary.get("MailParameters"));</script>
+                      </LEGEND>
+                      <TABLE height=227 border=0>
+                        <TR>
+                          <TD width="10"></TD>
+                          <TD width="180">
+                            <script>document.write(dictionnary.get("ServerAddress"));</script>
+                          </TD>
+                          <TD width="150"><INPUT TYPE="TEXT" NAME="ncitc08" VALUE="0.0.0.0"></TD>
+                          <TD width="10"></TD>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <TD>
+                            <script>document.write(dictionnary.get("Subject"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc09" VALUE=""></TD>
+                          <td></td>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("MailAddressForController"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc10" VALUE=""></td>
+                          <td>@</td>
+                          <td><INPUT TYPE="TEXT" NAME="ncitc11" VALUE=""></td>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("LowPriorityAlarm"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc12" VALUE=""></td>
+                          <td>@</td>
+                          <td><INPUT TYPE="TEXT" NAME="ncitc13" VALUE=""></td>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("MediumPriorityAlarm"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc14" VALUE=""></td>
+                          <td>@</td>
+                          <td><INPUT TYPE="TEXT" NAME="ncitc15" VALUE=""></td>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("HighPriorityAlarm"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc16" VALUE=""></td>
+                          <td>@</td>
+                          <td><INPUT TYPE="TEXT" NAME="ncitc17" VALUE=""></td>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("CriticalAlarm"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc18" VALUE=""></td>
+                          <td>@</td>
+                          <td><INPUT TYPE="TEXT" NAME="ncitc19" VALUE=""></td>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("LogMailInterval"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc25" SIZE="6" VALUE="0">&nbsp
+                            <script>document.write(dictionnary.get("Days"));</script>
+                          </td>
+                          <td colspan="2">
+                            <TABLE border=0 cellpadding=0 cellspacing=0>
+                              <TD><SELECT ID="ncitc26" NAME="ncitc26" STYLE="height: 22px ; width: 120px">
+                                  <OPTION value="0">
+                                    <script>document.write(dictionnary.get("Low"));</script>
+                                  </OPTION>
+                                  <OPTION value="1">
+                                    <script>document.write(dictionnary.get("Medium"));</script>
+                                  </OPTION>
+                                  <OPTION value="2">
+                                    <script>document.write(dictionnary.get("High"));</script>
+                                  </OPTION>
+                                  <OPTION value="3">
+                                    <script>document.write(dictionnary.get("Critical"));</script>
+                                  </OPTION>
+                                </SELECT>
+                                <script>setSelected("ncitc26", 0, 0, 3);</script>
+                              </TD>
+                            </TABLE>
+                          </td>
+                          <TD></TD>
+                        </TR>
+                      </TABLE>
+                    </FIELDSET>
+                  </TD>
+                </TR>
+                <tr height=5></tr>
+                <tr>
+                  <td>
+                    <FIELDSET>
+                      <LEGEND>
+                        <script>document.write(dictionnary.get("NTPParameters"));</script>
+                      </LEGEND>
+                      <TABLE border=0>
+                        <TR>
+                          <TD width="10"></TD>
+                          <TD width="150">
+                            <script>document.write(dictionnary.get("ServerAddress"));</script>
+                          </TD>
+                          <TD width="150"><INPUT TYPE="TEXT" NAME="ncitc21" VALUE="195.13.23.5"></TD>
+                          <TD width="10"></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("TimeShiftUTCLocal"));</script>
+                          </TD>
+                          <TD><INPUT TYPE="TEXT" NAME="ncitc22" SIZE="1" VALUE="1">&nbsp h.</TD>
+                          <TD></TD>
+                        </TR>
+                      </TABLE>
+                    </FIELDSET>
+                  </td>
+                </tr>
+              </TABLE>
+            </center>
+          </td>
+        </tr>
+        <tr Height=29>
+          <td Width=300></td>
+          <td Width=150 Align=Right><input name="button" type=SUBMIT value="Apply" style="width=80px"></td>
+          <td Width=86></td>
+          <td Width=150 Align=Left><input name="button" type=RESET value="Cancel" style="width=80px"></td>
+          <td Width=300></td>
+          <script>setButtons();</script>
+        </tr>
+      </Table>
+    </Form>
+  </FONT>
+</BODY>
+
+</HTML>

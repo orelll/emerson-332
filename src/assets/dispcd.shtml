@@ -1,1 +1,235 @@
-<HTML><HEAD><TITLE>TITLE BAR</TITLE><link rel="stylesheet" type="text/css" href="Emerson.css" /><META http-equiv="Content-Script-Type" content="text/javascript"><script> var page = 6; var lgge = top.header.lgge; var dictionnary = top.header.dictionnary; </script><script src="language.js"></script></HEAD><BODY Bgcolor="#C0C0C0" Leftmargin=0 Rightmargin=0 Topmargin=0 Bottommargin=0><FONT COLOR="#000000" FACE="arial"><FORM ACTION="/dispcf.cgi" METHOD=POST><TABLE Border=0 Cellpadding=0 Cellspacing=0><tr Height=26><td Colspan=5 Width=986 Class="fs"><Center><script>document.write(dictionnary.get("WebpageAndDisplayConfiguration"));</script></Center></TD></tr><tr Height=391><td Colspan=5 width=986><center><TABLE ALIGN="center"><TR><TD><FIELDSET><LEGEND><script>document.write(dictionnary.get("UserConfiguration"));</script></LEGEND><TABLE ALIGN="left"><TR><TD width=10></TD><TD width=200><script>document.write(dictionnary.get("Username"));</script></TD><TD width=190><TABLE><TD><INPUT TYPE="TEXT" NAME="ncidi10" SIZE="15" VALUE="EmersonID"></TD><TD width="30" ALIGN="center"></TD></TABLE></TD><TD width=10></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("Password"));</script> [H5]</TD><TD><TABLE><TD><INPUT TYPE="TEXT" NAME="ncidi03" SIZE="6" VALUE="12"></TD><TD width="30" ALIGN="center"></TD></TABLE></TD><TD></TD></TR></TABLE></FIELDSET></TD></TR><TR><TD><FIELDSET><LEGEND><script>document.write(dictionnary.get("ECDRemoteDisplaySettings"));</script></LEGEND><TABLE ALIGN="left"><TR><TD width="10"></TD><TD width="200"><script>document.write(dictionnary.get("IRAndKeyboardEnablingH2"));</script></TD><TD width="190"><TABLE><TD><SELECT ID="ncidi01" NAME="ncidi01" STYLE="height: 22px ; width: 180px" ><OPTION value="0" ><script>document.write(dictionnary.get("BothDisabled"));</script></OPTION><OPTION value="1" ><script>document.write(dictionnary.get("KeyboardOnly"));</script></OPTION><OPTION value="2" ><script>document.write(dictionnary.get("IROnly"));</script></OPTION><OPTION value="3" ><script>document.write(dictionnary.get("BothEnabled"));</script></OPTION></SELECT></TD><script>setSelected("ncidi01",3,0,3);</script></TABLE></TD><TD width="10"></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("InfraredAccessCodeH3"));</script></TD><TD><TABLE><TD><INPUT TYPE="TEXT" NAME="ncidi02" SIZE="6" VALUE="0"></TD><TD width="30" ALIGN="center"></TD></TABLE></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("DataToShow1"));</script></TD><TD><TABLE><TD><SELECT ID="ncidi04" NAME="ncidi04" STYLE="height: 22px ; width: 180px" ><OPTION value="0" ><script>document.write(dictionnary.get("ControlTemperature"));</script></OPTION><OPTION value="1" ><script>document.write(dictionnary.get("DefrostTemperature"));</script></OPTION><OPTION value="2" ><script>document.write(dictionnary.get("CoilInTemperature"));</script></OPTION><OPTION value="3" ><script>document.write(dictionnary.get("CoilOutTemperature"));</script></OPTION><OPTION value="4" ><script>document.write(dictionnary.get("Superheat"));</script></OPTION><OPTION value="5" ><script>document.write(dictionnary.get("ValveOpening"));</script></OPTION><OPTION value="6" ><script>document.write(dictionnary.get("DefrostStatus"));</script></OPTION></SELECT></TD><script>setSelected("ncidi04",0,0,6);</script></TABLE></TD><TD></TD></TR><TR><TD></TD><TD><label for="id1"><script>document.write(dictionnary.get("NoAlarmsDisplay2"));</script></label></TD><TD><input type="checkbox" name="ncidi05" value="1" id="id1" ><input type="hidden" name="ncidi05" value="0"></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("TemperatureUnits5"));</script></TD><TD><TABLE><TD><SELECT ID="ncidi06" NAME="ncidi06" STYLE="height: 22px ; width: 60px" ><OPTION value="0" >�C</OPTION><OPTION value="1" >�F</OPTION></SELECT></TD><script>setSelected("ncidi06",0,0,1);</script></TABLE></TD><TD></TD></TR><TR><TD></TD><TD><label for="id2"><script>document.write(dictionnary.get("DecimalPointDisplay6"));</script></label></TD><TD><input type="checkbox" name="ncidi07" value="1" id="id2" CHECKED><input type="hidden" name="ncidi07" value="0"></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("DisplayDuringDefrost7"));</script></TD><TD><TABLE><TD><SELECT ID="ncidi08" NAME="ncidi08" STYLE="height: 22px ; width: 120px" ><OPTION value="0" ><script>document.write(dictionnary.get("DF"));</script></OPTION><OPTION value="1" ><script>document.write(dictionnary.get("DFDefTemp"));</script></OPTION><OPTION value="2" ><script>document.write(dictionnary.get("DFAirTemp"));</script></OPTION></SELECT></TD><script>setSelected("ncidi08",0,0,2);</script></TABLE></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("AlignmentForTemperatureDisplayC"));</script></TD><TD><TABLE><TD><INPUT TYPE="TEXT" NAME="ncidi09" SIZE="6" VALUE="0.0"></TD><TD width="30" ALIGN="center">K</TD></TABLE></TD><TD></TD></TR></TABLE></FIELDSET></TD></TR></TABLE></center></td></tr><tr Height=29><td Width=300></td><td Width=150 Align=Right><input name="button" type=SUBMIT value="Apply" style="width=80px"></td><td Width=86></td><td Width=150 Align=Left><input name="button" type=RESET value="Cancel" style="width=80px"></td><td Width=300></td><script>setButtons();</script></tr></Table></Form></FONT></BODY></HTML>
+<HTML>
+
+<HEAD>
+  <TITLE>TITLE BAR</TITLE>
+  <link rel="stylesheet" type="text/css" href="Emerson.css" />
+  <META http-equiv="Content-Script-Type" content="text/javascript">
+  <script> var page = 6; var lgge = top.header.lgge; var dictionnary = top.header.dictionnary; </script>
+  <script src="language.js"></script>
+</HEAD>
+
+<BODY Bgcolor="#C0C0C0" Leftmargin=0 Rightmargin=0 Topmargin=0 Bottommargin=0>
+  <FONT COLOR="#000000" FACE="arial">
+    <FORM ACTION="/dispcf.cgi" METHOD=POST>
+      <TABLE Border=0 Cellpadding=0 Cellspacing=0>
+        <tr Height=26>
+          <td Colspan=5 Width=986 Class="fs">
+            <Center>
+              <script>document.write(dictionnary.get("WebpageAndDisplayConfiguration"));</script>
+            </Center>
+          </TD>
+        </tr>
+        <tr Height=391>
+          <td Colspan=5 width=986>
+            <center>
+              <TABLE ALIGN="center">
+                <TR>
+                  <TD>
+                    <FIELDSET>
+                      <LEGEND>
+                        <script>document.write(dictionnary.get("UserConfiguration"));</script>
+                      </LEGEND>
+                      <TABLE ALIGN="left">
+                        <TR>
+                          <TD width=10></TD>
+                          <TD width=200>
+                            <script>document.write(dictionnary.get("Username"));</script>
+                          </TD>
+                          <TD width=190>
+                            <TABLE>
+                              <TD><INPUT TYPE="TEXT" NAME="ncidi10" SIZE="15" VALUE="EmersonID"></TD>
+                              <TD width="30" ALIGN="center"></TD>
+                            </TABLE>
+                          </TD>
+                          <TD width=10></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("Password"));</script> [H5]
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><INPUT TYPE="TEXT" NAME="ncidi03" SIZE="6" VALUE="12"></TD>
+                              <TD width="30" ALIGN="center"></TD>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                      </TABLE>
+                    </FIELDSET>
+                  </TD>
+                </TR>
+                <TR>
+                  <TD>
+                    <FIELDSET>
+                      <LEGEND>
+                        <script>document.write(dictionnary.get("ECDRemoteDisplaySettings"));</script>
+                      </LEGEND>
+                      <TABLE ALIGN="left">
+                        <TR>
+                          <TD width="10"></TD>
+                          <TD width="200">
+                            <script>document.write(dictionnary.get("IRAndKeyboardEnablingH2"));</script>
+                          </TD>
+                          <TD width="190">
+                            <TABLE>
+                              <TD><SELECT ID="ncidi01" NAME="ncidi01" STYLE="height: 22px ; width: 180px">
+                                  <OPTION value="0">
+                                    <script>document.write(dictionnary.get("BothDisabled"));</script>
+                                  </OPTION>
+                                  <OPTION value="1">
+                                    <script>document.write(dictionnary.get("KeyboardOnly"));</script>
+                                  </OPTION>
+                                  <OPTION value="2">
+                                    <script>document.write(dictionnary.get("IROnly"));</script>
+                                  </OPTION>
+                                  <OPTION value="3">
+                                    <script>document.write(dictionnary.get("BothEnabled"));</script>
+                                  </OPTION>
+                                </SELECT></TD>
+                              <script>setSelected("ncidi01", 3, 0, 3);</script>
+                            </TABLE>
+                          </TD>
+                          <TD width="10"></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("InfraredAccessCodeH3"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><INPUT TYPE="TEXT" NAME="ncidi02" SIZE="6" VALUE="0"></TD>
+                              <TD width="30" ALIGN="center"></TD>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("DataToShow1"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><SELECT ID="ncidi04" NAME="ncidi04" STYLE="height: 22px ; width: 180px">
+                                  <OPTION value="0">
+                                    <script>document.write(dictionnary.get("ControlTemperature"));</script>
+                                  </OPTION>
+                                  <OPTION value="1">
+                                    <script>document.write(dictionnary.get("DefrostTemperature"));</script>
+                                  </OPTION>
+                                  <OPTION value="2">
+                                    <script>document.write(dictionnary.get("CoilInTemperature"));</script>
+                                  </OPTION>
+                                  <OPTION value="3">
+                                    <script>document.write(dictionnary.get("CoilOutTemperature"));</script>
+                                  </OPTION>
+                                  <OPTION value="4">
+                                    <script>document.write(dictionnary.get("Superheat"));</script>
+                                  </OPTION>
+                                  <OPTION value="5">
+                                    <script>document.write(dictionnary.get("ValveOpening"));</script>
+                                  </OPTION>
+                                  <OPTION value="6">
+                                    <script>document.write(dictionnary.get("DefrostStatus"));</script>
+                                  </OPTION>
+                                </SELECT></TD>
+                              <script>setSelected("ncidi04", 0, 0, 6);</script>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD><label for="id1">
+                              <script>document.write(dictionnary.get("NoAlarmsDisplay2"));</script>
+                            </label></TD>
+                          <TD><input type="checkbox" name="ncidi05" value="1" id="id1"><input type="hidden"
+                              name="ncidi05" value="0"></TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("TemperatureUnits5"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><SELECT ID="ncidi06" NAME="ncidi06" STYLE="height: 22px ; width: 60px">
+                                  <OPTION value="0">�C</OPTION>
+                                  <OPTION value="1">�F</OPTION>
+                                </SELECT></TD>
+                              <script>setSelected("ncidi06", 0, 0, 1);</script>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD><label for="id2">
+                              <script>document.write(dictionnary.get("DecimalPointDisplay6"));</script>
+                            </label></TD>
+                          <TD><input type="checkbox" name="ncidi07" value="1" id="id2" CHECKED><input type="hidden"
+                              name="ncidi07" value="0"></TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("DisplayDuringDefrost7"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><SELECT ID="ncidi08" NAME="ncidi08" STYLE="height: 22px ; width: 120px">
+                                  <OPTION value="0">
+                                    <script>document.write(dictionnary.get("DF"));</script>
+                                  </OPTION>
+                                  <OPTION value="1">
+                                    <script>document.write(dictionnary.get("DFDefTemp"));</script>
+                                  </OPTION>
+                                  <OPTION value="2">
+                                    <script>document.write(dictionnary.get("DFAirTemp"));</script>
+                                  </OPTION>
+                                </SELECT></TD>
+                              <script>setSelected("ncidi08", 0, 0, 2);</script>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("AlignmentForTemperatureDisplayC"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><INPUT TYPE="TEXT" NAME="ncidi09" SIZE="6" VALUE="0.0"></TD>
+                              <TD width="30" ALIGN="center">K</TD>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                      </TABLE>
+                    </FIELDSET>
+                  </TD>
+                </TR>
+              </TABLE>
+            </center>
+          </td>
+        </tr>
+        <tr Height=29>
+          <td Width=300></td>
+          <td Width=150 Align=Right><input name="button" type=SUBMIT value="Apply" style="width=80px"></td>
+          <td Width=86></td>
+          <td Width=150 Align=Left><input name="button" type=RESET value="Cancel" style="width=80px"></td>
+          <td Width=300></td>
+          <script>setButtons();</script>
+        </tr>
+      </Table>
+    </Form>
+  </FONT>
+</BODY>
+
+</HTML>

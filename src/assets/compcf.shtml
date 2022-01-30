@@ -1,1 +1,109 @@
-<HTML><HEAD><TITLE>TITLE BAR</TITLE><link rel="stylesheet" type="text/css" href="Emerson.css" /><META http-equiv="Content-Script-Type" content="text/javascript"><script> var page = 3; var lgge = top.header.lgge; var dictionnary = top.header.dictionnary; </script><script src="language.js"></script></HEAD><BODY Bgcolor="#C0C0C0" Leftmargin=0 Rightmargin=0 Topmargin=0 Bottommargin=0><FONT COLOR="#000000" FACE="arial"><!-- Container Table --><!-- Height=446 Width=986 --><FORM ACTION="/compcf.cgi" METHOD=POST><TABLE Border=0 Cellpadding=0 Cellspacing=0><tr Height=26><td Colspan=5 Width=986 Class="fs"><Center><script>document.write(dictionnary.get("CompressorConfiguration"));</script></Center></TD></tr><tr Height=391><td Colspan=5 width=986><center><!-- Data Table --><TABLE ALIGN="center"><TR><TD><FIELDSET><LEGEND><script>document.write(dictionnary.get("CompressorConfiguration"));</script></LEGEND><TABLE ALIGN="left"><TR><TD></TD><TD><script>document.write(dictionnary.get("DelayFirstStartC0"));</script></TD><TD><TABLE><TD><INPUT TYPE="TEXT" NAME="ncico01" SIZE="6" VALUE="0"></TD><TD width="30" ALIGN="center">min</TD></TABLE></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("CycleTimeC1"));</script></TD><TD><TABLE><TD><INPUT TYPE="TEXT" NAME="ncico02" SIZE="6" VALUE="0"></TD><TD width="30" ALIGN="center">min</TD></TABLE></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("MinOffTimeC2"));</script></TD><TD><TABLE><TD><INPUT TYPE="TEXT" NAME="ncico03" SIZE="6" VALUE="0"></TD><TD width="30" ALIGN="center">min</TD></TABLE></TD><TD></TD></TR><TR><TD></TD><TD><script>document.write(dictionnary.get("MinRunTimeC3"));</script></TD><TD><TABLE><TD><INPUT TYPE="TEXT" NAME="ncico04" SIZE="6" VALUE="0"></TD><TD width="30" ALIGN="center">min</TD></TABLE></TD><TD></TD></TR></TABLE></FIELDSET></TD></TR></TABLE><!-- End of Data Table --></center></td></tr><tr Height=29><td Width=300></td><td Width=150 Align=Right><input name="button" TYPE=SUBMIT VALUE="Apply" style="width=80px"></td><td Width=86></td><td Width=150 Align=Left><input name="button" TYPE=RESET VALUE="Cancel" style="width=80px"></td><td Width=300></td><script>setButtons();</script></tr></Table></Form><!-- End of Container Table --></FONT></BODY></HTML>
+<HTML>
+
+<HEAD>
+  <TITLE>TITLE BAR</TITLE>
+  <link rel="stylesheet" type="text/css" href="Emerson.css" />
+  <META http-equiv="Content-Script-Type" content="text/javascript">
+  <script> var page = 3; var lgge = top.header.lgge; var dictionnary = top.header.dictionnary; </script>
+  <script src="language.js"></script>
+</HEAD>
+
+<BODY Bgcolor="#C0C0C0" Leftmargin=0 Rightmargin=0 Topmargin=0 Bottommargin=0>
+  <FONT COLOR="#000000" FACE="arial">
+    <!-- Container Table -->
+    <!-- Height=446 Width=986 -->
+    <FORM ACTION="/compcf.cgi" METHOD=POST>
+      <TABLE Border=0 Cellpadding=0 Cellspacing=0>
+        <tr Height=26>
+          <td Colspan=5 Width=986 Class="fs">
+            <Center>
+              <script>document.write(dictionnary.get("CompressorConfiguration"));</script>
+            </Center>
+          </TD>
+        </tr>
+        <tr Height=391>
+          <td Colspan=5 width=986>
+            <center>
+              <!-- Data Table -->
+              <TABLE ALIGN="center">
+                <TR>
+                  <TD>
+                    <FIELDSET>
+                      <LEGEND>
+                        <script>document.write(dictionnary.get("CompressorConfiguration"));</script>
+                      </LEGEND>
+                      <TABLE ALIGN="left">
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("DelayFirstStartC0"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><INPUT TYPE="TEXT" NAME="ncico01" SIZE="6" VALUE="0"></TD>
+                              <TD width="30" ALIGN="center">min</TD>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("CycleTimeC1"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><INPUT TYPE="TEXT" NAME="ncico02" SIZE="6" VALUE="0"></TD>
+                              <TD width="30" ALIGN="center">min</TD>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("MinOffTimeC2"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><INPUT TYPE="TEXT" NAME="ncico03" SIZE="6" VALUE="0"></TD>
+                              <TD width="30" ALIGN="center">min</TD>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                        <TR>
+                          <TD></TD>
+                          <TD>
+                            <script>document.write(dictionnary.get("MinRunTimeC3"));</script>
+                          </TD>
+                          <TD>
+                            <TABLE>
+                              <TD><INPUT TYPE="TEXT" NAME="ncico04" SIZE="6" VALUE="0"></TD>
+                              <TD width="30" ALIGN="center">min</TD>
+                            </TABLE>
+                          </TD>
+                          <TD></TD>
+                        </TR>
+                      </TABLE>
+                    </FIELDSET>
+                  </TD>
+                </TR>
+              </TABLE><!-- End of Data Table -->
+            </center>
+          </td>
+        </tr>
+        <tr Height=29>
+          <td Width=300></td>
+          <td Width=150 Align=Right><input name="button" TYPE=SUBMIT VALUE="Apply" style="width=80px"></td>
+          <td Width=86></td>
+          <td Width=150 Align=Left><input name="button" TYPE=RESET VALUE="Cancel" style="width=80px"></td>
+          <td Width=300></td>
+          <script>setButtons();</script>
+        </tr>
+      </Table>
+    </Form><!-- End of Container Table -->
+  </FONT>
+</BODY>
+
+</HTML>
