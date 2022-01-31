@@ -4,7 +4,6 @@ import { ThumbnailData } from 'src/app/common/thumbnail-data';
 import { HttpCallerService } from 'src/app/services/http-caller.service';
 import * as _ from 'lodash';
 import { TagReadingService } from 'src/app/services/tag-reading.service';
-import { element } from 'protractor';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -17,6 +16,7 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
   @Input() address = '';
   @ViewChild('anlgcfContainer', {static:false}) anlgcfContainer2 : ElementRef;
 
+  private idSet: string = undefined;
   private anlgcfContainer: HTMLElement = undefined;
   private dataBackup: ThumbnailData = undefined;
 
@@ -45,7 +45,6 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.anlgcfContainer = document.getElementById('anlgcfContainer');
     this.refreshCOmponentData();
-
   }
 
   ngOnInit(): void {
@@ -53,7 +52,8 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
 
   refreshCOmponentData(): void {
     const containerDiv = this.anlgcfContainer2.nativeElement as HTMLDivElement;
-    containerDiv.id = this.address;
+    this.idSet = `x_${this.address.replace(/\./g, '_')}`;//this.address.replace(/\./g, '_')
+    containerDiv.id = this.idSet;
 
     this.httpCaller.loadPage(this.address, PagesName.anlgcf).subscribe(body => {
       containerDiv.innerHTML = body;
@@ -64,13 +64,13 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
   check(): void {
 
     //fan ncian23
-    const fan = this.tagReader.getTagValue('ncian23');
+    const fan = this.tagReader.getTagValue(this.idSet, 'ncian23');
 
     //alarm
-    const alarm = this.tagReader.getTagValue('ncian20');
+    const alarm = this.tagReader.getTagValue(this.idSet, 'ncian20');
 
     //alarm
-    const alsarm = this.tagReader.getTagValue('ncian20');
+    const alarmx = this.tagReader.getTagValue(this.idSet, 'ncian20');
 
     this.dataBackup = {
       temperatureSet: 0.2,

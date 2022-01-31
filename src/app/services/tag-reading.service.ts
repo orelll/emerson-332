@@ -7,9 +7,9 @@ export class TagReadingService {
 
   constructor() { }
 
-  getTagValue(tagName: string): any{
-    var doc = document.getElementsByName(tagName);
-    var tag = doc[0] as HTMLInputElement;
-    return tag.value;
+  getTagValue(componentName: string, tagName: string): any{
+    var container = document.querySelector(`#${componentName}`);
+    var found = container.querySelector(`[name=${tagName}]`) as HTMLInputElement;
+    return found.value;
   }
 }
