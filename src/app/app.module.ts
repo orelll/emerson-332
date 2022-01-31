@@ -17,6 +17,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Ec332ThumbnailComponent } from './components/ec332-thumbnail/ec332-thumbnail.component';
 import { BasicAuthInterceptor } from './interceptors/basic-auth.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const materialModules: any[] = [
   MatProgressSpinnerModule,
@@ -35,6 +36,7 @@ const materialModules: any[] = [
     Ec332ThumbnailComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
