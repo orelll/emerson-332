@@ -35,10 +35,11 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
   }
 
   refreshCOmponentData(): void {
+    const containerDiv = this.anlgcfContainer2.nativeElement as HTMLDivElement;
+    containerDiv.id = this.address;
+
     this.httpCaller.loadPage(this.address, PagesName.anlgcf).subscribe(body => {
-      const containerDiv = this.anlgcfContainer2.nativeElement as HTMLDivElement;
       containerDiv.innerHTML = body;
-      containerDiv.find
       this.check();
     });
   }

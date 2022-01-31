@@ -1,0 +1,27 @@
+.setting-container{
+  display: flex;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    height: 35px;
+}
+
+.input-form-field{
+  width: 35px;
+  text-align: center;
+}
+
+.mat-form-field-infix {
+  border-top-width: 0;
+
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+::ng-deep .mat-form-field-infix {
+  border-top: 0;
+}
