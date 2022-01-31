@@ -14,7 +14,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatIconModule } from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { Ec332ThumbnailComponent } from './components/ec332-thumbnail/ec332-thumbnail.component';
@@ -31,6 +32,7 @@ const materialModules: any[] = [
   MatCheckboxModule,
   MatIconModule,
   MatSidenavModule,
+  MatSnackBarModule
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators'
 
@@ -8,7 +9,8 @@ import { map } from 'rxjs/operators'
 })
 export class HttpCallerService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+    private _snackBar: MatSnackBar) {
   }
 
   loadPage(pageAddress: string, page: string): Observable<string> {
@@ -35,9 +37,11 @@ export class HttpCallerService {
     this.http.post(fullAddress, body.toString(), options).subscribe(
       response => {
         console.log(response);
+        this._snackBar.open('zapisano!', 'ok');
       },
       err => {
         console.error(err);
+        this._snackBar.open(err.message, 'zamknij');
       }
     );
   }
