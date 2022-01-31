@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { delay, map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,7 @@ export class HttpCallerService {
   loadPage(pageAddress: string, page: string): Observable<string> {
     const fullAddress = `assets/${page}`;
     return this.http.get(fullAddress, { responseType: 'text', observe: 'response' },).pipe(
+      delay(this.getRandomDelay()),
       map(data => {
         return data.body;
       })
@@ -44,5 +45,11 @@ export class HttpCallerService {
         this._snackBar.open(err.message, 'zamknij');
       }
     );
+  }
+
+  private getRandomDelay():number{
+    const min = 400;
+    const max = 1800;
+    return Math.random() * (max - min) + min;
   }
 }

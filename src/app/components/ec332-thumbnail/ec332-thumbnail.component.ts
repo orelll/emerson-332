@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { PagesName } from 'src/app/common/pages-name.enum';
 import { ThumbnailData } from 'src/app/common/thumbnail-data';
 import { HttpCallerService } from 'src/app/services/http-caller.service';
@@ -26,6 +26,7 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
   private defrostingCode: string = 'ncian23';//
   private alarmCode: string = 'ncian20';
 
+  public loading: boolean = false;
   dataForm: FormGroup = undefined;
   public get enableSave(): boolean {
     const thisSame = this.dataBackup?.temperatureSet !== this.dataForm.controls['temperatureSet'].value
@@ -38,13 +39,15 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
   }
 
   constructor(private httpCaller: HttpCallerService,
-    private tagReader: TagReadingService) {
+    private tagReader: TagReadingService,
+    private cdref: ChangeDetectorRef) {
     this.dataForm = new FormGroup({
       temperatureSet: new FormControl(0),
-      fan: new FormControl(false),
-      cooling: new FormControl(false),
-      defrosting: new FormControl(false),
-      alarm: new FormControl(false),
+      temperature: new FormControl({ value: '', disabled: true }),
+      fan: new FormControl({ value: false, disabled: true }),
+      cooling: new FormControl({ value: false, disabled: true }),
+      defrosting: new FormControl({ value: false, disabled: true }),
+      alarm: new FormControl({ value: false, disabled: true }),
     });
   }
 
@@ -61,9 +64,16 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
     this.idSet = `x_${this.address.replace(/\./g, '_')}`;
     containerDiv.id = this.idSet;
 
+    this.loading = true;
+    this.cdref.detectChanges();
     this.httpCaller.loadPage(this.address, PagesName.anlgcf).subscribe(body => {
       containerDiv.innerHTML = body;
       this.check();
+      this.loading = false;
+      this.cdref.detectChanges();
+    },
+    err => {
+      this.loading = false;
     });
   }
 
@@ -80,6 +90,7 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
 
     this.dataBackup = {
       temperatureSet: 0.2,
+      temperature : 0.6,
       fan: this.toBoolean(fan),
       cooling: false,
       defrosting: true,
@@ -87,6 +98,7 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
     }
 
     this.dataForm.controls['temperatureSet'].setValue(this.dataBackup.temperatureSet);
+    this.dataForm.controls['temperature'].setValue(this.dataBackup.temperature);
     this.dataForm.controls['fan'].setValue(this.dataBackup.fan);
     this.dataForm.controls['cooling'].setValue(this.dataBackup.cooling);
     this.dataForm.controls['defrosting'].setValue(this.dataBackup.defrosting);

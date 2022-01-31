@@ -4,55 +4,75 @@
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>EC3-332</mat-card-title>
       <mat-card-subtitle>Sterownik chłodni</mat-card-subtitle>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" color="primary"
+        (click)="refreshCOmponentData()">
+        <mat-icon>refresh</mat-icon>
+      </button>
     </mat-card-header>
     <mat-card-content>
+      <div class="spinner_overlay" *ngIf="loading">
+
+      </div>
+      <mat-spinner *ngIf="loading"></mat-spinner>
       <div id="anlgcfContainer" #anlgcfContainer hidden>
       </div>
-      <p>
-        Adres urządzenia: {{address}}
-      </p>
+    <div>
       <form [formGroup]="dataForm" (ngSubmit)="onFormSubmit()">
-      <div class="setting-container">
-        <p>
-          Temperatura zadana:
-        </p>
-        <mat-form-field class="input-form-field">
-          <input matInput formControlName="temperatureSet" type="number" step="0.5" disabled>
-        </mat-form-field>
-      </div>
-      <div class="setting-container">
-        <p>
-          Wentylator:
-        </p>
-        <mat-slide-toggle class="example-margin" value="primary" formControlName="fan" disabled>
-      </mat-slide-toggle>
-      </div>
-      <div class="setting-container">
-        <p>
-          Chłodzenie:
-        </p>
-        <mat-slide-toggle class="example-margin" value="primary" formControlName="cooling" disabled>
-        </mat-slide-toggle>
-      </div>
-      <div class="setting-container">
-        <p>
-          Rozmrażanie:
-        </p>
-        <mat-slide-toggle class="example-margin" value="primary" formControlName="defrosting" disabled>
-        </mat-slide-toggle>
-      </div>
-      <div class="setting-container">
-        <p>
-          Alarm:
-        </p>
-        <mat-slide-toggle class="example-margin" value="primary" formControlName="alarm" disabled>
-        </mat-slide-toggle>
-      </div>
+        <div class="setting-container">
+          <p>
+            Adres urządzenia: {{address}}
+          </p>
+        </div>
+        <div class="setting-container">
+          <p>
+            Temperatura zadana:
+          </p>
+          <mat-form-field class="input-form-field">
+            <input matInput formControlName="temperatureSet" type="number" step="0.25">
+          </mat-form-field>
+        </div>
+        <div class="setting-container">
+          <p>
+            Temperatura aktualna:
+          </p>
+          <mat-form-field class="input-form-field">
+            <input matInput formControlName="temperature" type="number" step="0.25">
+          </mat-form-field>
+        </div>
+        <div class="setting-container">
+          <p>
+            Wentylator:
+          </p>
+          <mat-slide-toggle class="example-margin" value="primary" formControlName="fan">
+          </mat-slide-toggle>
+        </div>
+        <div class="setting-container">
+          <p>
+            Chłodzenie:
+          </p>
+          <mat-slide-toggle class="example-margin" value="primary" formControlName="cooling">
+          </mat-slide-toggle>
+        </div>
+        <div class="setting-container">
+          <p>
+            Rozmrażanie:
+          </p>
+          <mat-slide-toggle class="example-margin" value="primary" formControlName="defrosting">
+          </mat-slide-toggle>
+        </div>
+        <div class="setting-container">
+          <p>
+            Alarm:
+          </p>
+          <mat-slide-toggle class="example-margin" value="primary" formControlName="alarm">
+          </mat-slide-toggle>
+        </div>
       </form>
-      </mat-card-content>
+    </div>
+    </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="onFormSubmit()"  [disabled]="enableSave">Zapisz</button>
+      <button mat-raised-button color="primary" (click)="onFormSubmit()" [disabled]="enableSave">Zapisz</button>
     </mat-card-actions>
   </mat-card>
 </div>
