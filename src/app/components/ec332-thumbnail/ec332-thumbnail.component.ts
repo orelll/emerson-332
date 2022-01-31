@@ -5,6 +5,7 @@ import { HttpCallerService } from 'src/app/services/http-caller.service';
 import * as _ from 'lodash';
 import { TagReadingService } from 'src/app/services/tag-reading.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-ec332-thumbnail',
@@ -40,7 +41,8 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
 
   constructor(private httpCaller: HttpCallerService,
     private tagReader: TagReadingService,
-    private cdref: ChangeDetectorRef) {
+    private cdref: ChangeDetectorRef,
+    private _snackBar: MatSnackBar) {
     this.dataForm = new FormGroup({
       temperatureSet: new FormControl(0),
       temperature: new FormControl({ value: '', disabled: true }),
@@ -107,7 +109,19 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
 
   onFormSubmit(): void {
     var changes = this.listChangedProperties();
-    this.httpCaller.postChange(this.address, PagesName.anlgcf, changes);
+    this.loading = true;
+    this.httpCaller.postChange(this.address, PagesName.anlgcf, changes).subscribe(
+      response => {
+        console.log(response);
+        this._snackBar.open('zapisano!', 'ok');
+        this.loading = false;
+      },
+      err => {
+        console.error(err);
+        this.loading = false;
+        this._snackBar.open(err.message, 'zamknij');
+      }
+    );
   }
 
   private toBoolean(value: any): boolean {

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable, of } from 'rxjs';
+import { Observable, of, pipe } from 'rxjs';
 import { delay, map } from 'rxjs/operators'
 
 @Injectable({
@@ -9,8 +9,7 @@ import { delay, map } from 'rxjs/operators'
 })
 export class HttpCallerService {
 
-  constructor(private http: HttpClient,
-    private _snackBar: MatSnackBar) {
+  constructor(private http: HttpClient) {
   }
 
   loadPage(pageAddress: string, page: string): Observable<string> {
@@ -23,7 +22,7 @@ export class HttpCallerService {
     );
   }
 
-  postChange(pageAddress: string, page: string, changes: [string, any][]): void {
+  postChange(pageAddress: string, page: string, changes: [string, any][]): Observable<void> {
     const fullAddress = `${pageAddress}/${page}`;
 
     let options = {
@@ -35,16 +34,12 @@ export class HttpCallerService {
       body.set(element[0], element[1])
     });
     console.log(`posting body: ${body}`);
-    this.http.post(fullAddress, body.toString(), options).subscribe(
-      response => {
-        console.log(response);
-        this._snackBar.open('zapisano!', 'ok');
-      },
-      err => {
-        console.error(err);
-        this._snackBar.open(err.message, 'zamknij');
-      }
-    );
+
+    return this.http.post(fullAddress, body.toString(), options).
+      pipe(
+        delay(this.getRandomDelay()),
+        map(x => { return; }))
+
   }
 
   private getRandomDelay():number{

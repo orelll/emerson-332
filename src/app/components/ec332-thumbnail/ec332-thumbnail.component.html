@@ -1,7 +1,10 @@
 <div>
   <mat-card class="example-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
+      <!-- <div mat-card-avatar class="example-header-image">
+        <img [src]="'assets/cooler.png'">
+      </div> -->
+
       <mat-card-title>EC3-332</mat-card-title>
       <mat-card-subtitle>Sterownik chłodni</mat-card-subtitle>
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" color="primary"
@@ -17,6 +20,7 @@
       <div id="anlgcfContainer" #anlgcfContainer hidden>
       </div>
     <div>
+      <img [src]="'assets/cooler.png'">
       <form [formGroup]="dataForm" (ngSubmit)="onFormSubmit()">
         <div class="setting-container">
           <p>
@@ -70,7 +74,6 @@
       </form>
     </div>
     </mat-card-content>
-
     <mat-card-actions>
       <button mat-raised-button color="primary" (click)="onFormSubmit()" [disabled]="enableSave">Zapisz</button>
     </mat-card-actions>

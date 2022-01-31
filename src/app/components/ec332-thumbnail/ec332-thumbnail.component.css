@@ -22,6 +22,21 @@
   margin-top: 0px;
 }
 
+::ng-deep .mat-card-header-text{
+  flex: 1;
+  margin-right: 0;
+}
+
+img{
+  height: auto;
+  width: 150px;
+}
+
+.example-header-image{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 ::ng-deep .mat-form-field-infix {
   border-top: 0;
 }
