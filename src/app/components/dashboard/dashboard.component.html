@@ -1,10 +1,37 @@
 <div class="header">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" (click)="sidenav.toggle()"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Malchar byznesmen</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="goToRepo()">
+      <mat-icon>code</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div>
+    <mat-sidenav-container fxFlexFill class="example-container">
 
-</div>
-<div class="thumbnail-container">
-  <app-ec332-thumbnail [address]="'192.168.0.101'"></app-ec332-thumbnail>
-  <app-ec332-thumbnail [address]="'192.168.0.102'"></app-ec332-thumbnail>
-  <app-ec332-thumbnail [address]="'192.168.0.103'"></app-ec332-thumbnail>
-  <app-ec332-thumbnail [address]="'192.168.0.104'"></app-ec332-thumbnail>
-  <app-ec332-thumbnail [address]="'192.168.0.105'"></app-ec332-thumbnail>
-</div>
+      <mat-sidenav color="primary" #sidenav>
+        <div class="links-container">
+          <a mat-button routerLink="/about-us">
+            <mat-icon>home</mat-icon>
+            Podgląd
+          </a>
+          <a mat-button routerLink="/about-us">
+            <mat-icon>settings</mat-icon>
+            Ustawienia</a>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content class="thumbnail-container">
+        <app-ec332-thumbnail [address]="'192.168.0.101'"></app-ec332-thumbnail>
+        <app-ec332-thumbnail [address]="'192.168.0.102'"></app-ec332-thumbnail>
+        <app-ec332-thumbnail [address]="'192.168.0.103'"></app-ec332-thumbnail>
+        <app-ec332-thumbnail [address]="'192.168.0.104'"></app-ec332-thumbnail>
+        <app-ec332-thumbnail [address]="'192.168.0.105'"></app-ec332-thumbnail>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+  </div>

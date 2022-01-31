@@ -12,4 +12,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToRepo():void{
+    window.open('https://github.com/orelll/emerson-332', "_blank");
+  }
 }
