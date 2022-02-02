@@ -10,11 +10,32 @@
   height: 8%;
 }
 
-app-ec332-thumbnail{
-  margin: 10px;
-  min-width: 300px;
-  max-width: 500px;
+/* Large screens ----------- */
+@media only screen
+and (min-width : 991px) {
+  app-ec332-thumbnail{
+    width: calc(33% - 10px);
+  }
 }
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (max-width : 991px)
+and (min-width : 480px)  {
+  app-ec332-thumbnail{
+    width: calc(50% - 10px);
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (max-width : 479px)  {
+  app-ec332-thumbnail{
+    width: calc(100% - 10px);
+  }
+}
+
+
 
 .example-spacer {
   flex: 1 1 auto;

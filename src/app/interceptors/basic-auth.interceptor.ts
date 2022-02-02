@@ -25,7 +25,7 @@ export class BasicAuthInterceptor implements HttpInterceptor {
 
   private appendAuthHeader(request: HttpRequest<unknown>): HttpRequest<unknown> {
     return request.clone({
-      headers: request.headers.set('Authorization', this.getUserToken())
+      headers: request.headers.set('Authorization', `Basic ${this.getUserToken()}`)
     });
   }
 }

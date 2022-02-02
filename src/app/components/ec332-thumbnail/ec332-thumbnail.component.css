@@ -29,7 +29,7 @@
 
 img{
   height: auto;
-  width: 150px;
+  width: 100%;
 }
 
 .example-header-image{
@@ -39,6 +39,10 @@ img{
 
 ::ng-deep .mat-form-field-infix {
   border-top: 0;
+}
+
+mat-card{
+  margin: 10px;
 }
 
 mat-card-header{
@@ -71,3 +75,4 @@ mat-spinner{
   opacity: 0.6;
   z-index: 999;
 }
+

@@ -66,16 +66,20 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
     this.idSet = `x_${this.address.replace(/\./g, '_')}`;
     containerDiv.id = this.idSet;
 
+
+
     this.loading = true;
     this.cdref.detectChanges();
     this.httpCaller.loadPage(this.address, PagesName.anlgcf).subscribe(body => {
       containerDiv.innerHTML = body;
+      console.log(`body: ${body}`)
       this.check();
       this.loading = false;
       this.cdref.detectChanges();
     },
     err => {
       this.loading = false;
+      console.error(err.message)
     });
   }
 
