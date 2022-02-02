@@ -5,4 +5,6 @@ export interface ThumbnailData{
   cooling: boolean;
   defrosting: boolean;
   alarm: boolean;
+  status: boolean;
+  valveOpen: number;
 }

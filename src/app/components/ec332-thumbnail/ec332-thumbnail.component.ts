@@ -20,6 +20,7 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
   private idSet: string = undefined;
   private anlgcfContainer: HTMLElement = undefined;
   private dataBackup: ThumbnailData = undefined;
+  public currentData: ThumbnailData = undefined;
 
   private temperatureSetCode: string = 'ncian23';//TODO: to find
   private fanCode: string = 'ncian23';
@@ -110,8 +111,12 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
       fan: this.toBoolean(fan),
       cooling: false,
       defrosting: true,
-      alarm: this.toBoolean(alarm)
+      alarm: this.toBoolean(alarm),
+      status: true,
+      valveOpen: 0.75
     }
+
+    this.currentData = _.cloneDeep(this.dataBackup) as ThumbnailData;
 
     this.dataForm.controls['temperatureSet'].setValue(this.dataBackup.temperatureSet);
     this.dataForm.controls['temperature'].setValue(this.dataBackup.temperature);

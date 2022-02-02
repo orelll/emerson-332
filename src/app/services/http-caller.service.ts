@@ -15,7 +15,7 @@ export class HttpCallerService {
 
   async loadPage(pageAddress: string, page: string): Promise<string> {
 
-    const fullAddress = `http://${pageAddress}/${page}` //assets/${page}`;
+    const fullAddress = `assets/${page}`;//`http://${pageAddress}/${page}` //assets/${page}`;
 
     let options = {
       headers: new HttpHeaders().set('Authorization', `Basic ${this.getUserToken()}`),

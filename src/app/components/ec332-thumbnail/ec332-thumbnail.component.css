@@ -1,9 +1,50 @@
 .setting-container{
-  display: flex;
+    display: flex;
     flex-wrap: nowrap;
     align-content: flex-start;
     justify-content: space-between;
     height: 35px;
+}
+
+.table-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.table-container div{
+  min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+
+.table-container div:nth-child(1)
+{
+  align-items: flex-start;
+}
+.table-container div:nth-child(2)
+{
+  align-items:center;
+}
+.table-container div:nth-child(3)
+{
+  align-items:flex-end;
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (max-width : 479px)  {
+  .table-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+  }
 }
 
 .input-form-field{
@@ -89,6 +130,12 @@ mat-spinner{
   opacity: 0.85;
   z-index: 999;
   display: flex;
+}
+
+.hujsko{
+  height: 30%;
+  width: 30%;
+  top: 30%;
 }
 
 .offline-overlay h1 {
