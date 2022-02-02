@@ -28,6 +28,8 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
   private alarmCode: string = 'ncian20';
 
   public loading: boolean = false;
+  public offline: boolean = false;
+
   dataForm: FormGroup = undefined;
   public get enableSave(): boolean {
     const thisSame = this.dataBackup?.temperatureSet !== this.dataForm.controls['temperatureSet'].value
@@ -69,17 +71,25 @@ export class Ec332ThumbnailComponent implements OnInit, AfterViewInit {
 
 
     this.loading = true;
+    this.offline = false;
     this.cdref.detectChanges();
-    this.httpCaller.loadPage(this.address, PagesName.anlgcf).subscribe(body => {
+    this.httpCaller.loadPage(this.address, PagesName.anlgcf).then(body => {
       containerDiv.innerHTML = body;
-      console.log(`body: ${body}`)
+      this.offline = false;
       this.check();
+    },
+   ).catch(err => {
+      console.error(err.message)
+
+      if(err.name === 'HttpErrorResponse'){
+        this.offline = true;
+        this._snackBar.open(`Maszyna ${this.address} prawdopodobnie jest nieosiągalna`, 'ok', {
+          duration: 5000
+        });
+      }
+    }).finally(() => {
       this.loading = false;
       this.cdref.detectChanges();
-    },
-    err => {
-      this.loading = false;
-      console.error(err.message)
     });
   }
 

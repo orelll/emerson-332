@@ -1,20 +1,19 @@
 
   <mat-card class="example-card">
     <mat-card-header>
-      <!-- <div mat-card-avatar class="example-header-image">
-        <img [src]="'assets/cooler.png'">
-      </div> -->
-
       <mat-card-title>EC3-332</mat-card-title>
       <mat-card-subtitle>Sterownik chłodni</mat-card-subtitle>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" color="primary"
-        (click)="refreshCOmponentData()">
+      <button mat-icon-button class="z-index-1000" aria-label="Example icon-button with share icon" color="primary"
+        (click)="refreshCOmponentData()" [disabled]="loading">
         <mat-icon>refresh</mat-icon>
       </button>
     </mat-card-header>
     <mat-card-content>
-      <div class="spinner_overlay" *ngIf="loading">
+      <div class="spinner-overlay" *ngIf="loading">
 
+      </div>
+      <div class="offline-overlay" *ngIf="offline">
+          <h1 class="z-index-1000">brak połączenia</h1>
       </div>
       <mat-spinner *ngIf="loading"></mat-spinner>
       <div id="anlgcfContainer" #anlgcfContainer hidden>

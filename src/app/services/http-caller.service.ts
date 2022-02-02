@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, of, pipe } from 'rxjs';
 import { delay, map } from 'rxjs/operators'
 import { UserDataProviderService } from './user-data-provider.service';
@@ -14,7 +13,7 @@ export class HttpCallerService {
     private userDataProvider:UserDataProviderService) {
   }
 
-  loadPage(pageAddress: string, page: string): Observable<string> {
+  async loadPage(pageAddress: string, page: string): Promise<string> {
 
     const fullAddress = `http://${pageAddress}/${page}` //assets/${page}`;
 
@@ -22,12 +21,12 @@ export class HttpCallerService {
       headers: new HttpHeaders().set('Authorization', `Basic ${this.getUserToken()}`),
     };
 
-    return this.http.get(fullAddress, { responseType: 'text', observe: 'response' }).pipe(
+    return await this.http.get(fullAddress, { responseType: 'text', observe: 'response' }).pipe(
       map(data => {
         console.log(`return data: ${data.body}`)
-        return data.toString();
+        return data?.body?.toString();
       })
-    )
+    ).toPromise()
   }
 
   postChange(pageAddress: string, page: string, changes: [string, any][]): Observable<void> {

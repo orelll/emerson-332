@@ -65,7 +65,11 @@ mat-spinner{
   z-index: 1000;
 }
 
-.spinner_overlay {
+.z-index-1000{
+  z-index: 1000;
+}
+
+.spinner-overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -74,5 +78,21 @@ mat-spinner{
   background-color: #fff;
   opacity: 0.6;
   z-index: 999;
+}
+.offline-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.85;
+  z-index: 999;
+  display: flex;
+}
+
+.offline-overlay h1 {
+  margin: auto;
+  color: red;
 }
 
